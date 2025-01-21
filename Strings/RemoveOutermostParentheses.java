@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class RemoveOutermostParentheses {
     public String removeOuterParentheses(String s) {
