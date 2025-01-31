@@ -1,7 +1,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        HappyNumber h = new HappyNumber();
-        System.out.println(h.isHappy(2));
+        SumOfSquareNum s = new SumOfSquareNum();
+        System.out.println(s.judgeSquareSum(2147483600));
     }
 }
