@@ -1,9 +1,7 @@
-import java.io.CharConversionException;
 import java.util.HashMap;
-import java.util.HashSet;
 
-public class Leetcodecontest {
-    public String findValidPair(String s) {
+public class FindValidPair {
+     public String findValidPair(String s) {
         HashMap<Integer, Integer> set = new HashMap<>();
         String ans = "";
         for (int i = 0; i < s.length(); i++) {
