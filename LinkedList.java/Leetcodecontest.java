@@ -1,34 +1,27 @@
 import java.io.CharConversionException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 
 public class Leetcodecontest {
-    public String findValidPair(String s) {
-        HashMap<Integer, Integer> set = new HashMap<>();
-        String ans = "";
-        for (int i = 0; i < s.length(); i++) {
-            int ch = Character.getNumericValue(s.charAt(i));
-            if (set.containsKey(ch)) {
-                set.put(ch, set.get(ch) + 1);
-            } else {
-                set.put(ch, 1);
-            }
+    public int minimumIncrements(int[] nums, int[] target) {
+        int targetGcd = target[0];
+        for (int i = 1; i < target.length; i++) {
+            targetGcd = gcd(targetGcd,target[i]);
         }
 
-        for (int i = 0; i < s.length() -1; i++) {
-            int ch = Character.getNumericValue(s.charAt(i));
-            int nextCh = Character.getNumericValue(s.charAt(i+1));
-            if (ch != nextCh) {
-                if(ch == set.get(ch) && nextCh == set.get(nextCh)){
-                    ans += ch;
-                    ans += nextCh;
-                    break;
-                }
-                else{
-                    ans = "";
-                }
+        int operations = 0;
+        int leastDiffIndex = 0;
+
+        for (int num : nums) {
+            if (targetGcd) {
+                
             }
         }
-        return ans;
+    }
+    private static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }
