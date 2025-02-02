@@ -14,12 +14,7 @@ public class Leetcodecontest {
 
         int operations = 0;
         int leastDiffIndex = 0;
-
-        for (int num : nums) {
-            if (targetGcd) {
-                
-            }
-        }
+        return 1;
     }
     private static int gcd(int a, int b) {
         return b == 0 ? a : gcd(b, a % b);

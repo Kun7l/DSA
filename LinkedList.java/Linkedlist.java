@@ -1,10 +1,10 @@
 class LinkedList {
-    public Node convertToLL(int[] arr){
-        Node head  = new Node(arr[0]);
-        Node mover = head;
+    public ListNode convertToLL(int[] arr){
+        ListNode head  = new ListNode(arr[0]);
+        ListNode mover = head;
 
         for (int i = 1; i < arr.length; i++) {
-            Node temp = new Node(arr[i]);
+            ListNode temp = new ListNode(arr[i]);
             mover.next = temp;
             mover = temp;
         }
@@ -12,17 +12,19 @@ class LinkedList {
     }
 }
 
-class Node {
-    int data;
-    Node next;
+class ListNode {
+    int val;
+    ListNode next;
 
-    Node(int data, Node next) {
-        this.data = data;
-        this.next = next;
+    ListNode() {
     }
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }
