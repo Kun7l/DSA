@@ -1,20 +1,42 @@
 public class getIntersectionNode {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode tempA = headA;
-        ListNode tempB = headB;
+        int diff = getDifference(headA, headB);
 
-        while (tempA != null) {
-            int data = tempA.val;
-            tempB = headB;
-            while (tempB != null) {
-                if (tempB == tempA) {
-                    return tempA;
-                }
-                tempB = tempB.next;
+        if (diff < 0) {
+            while (diff != 0) {
+                headB = headB.next;
+                diff++;
             }
-            tempA = tempA.next;
+        } else {
+            while (diff != 0) {
+                headA = headA.next;
+                diff--;
+            }
         }
 
+        while (headA!=null) {
+            if (headA == headB) {
+                return headA;
+            }
+            headA = headA.next;
+            headB = headB.next;
+        }
         return null;
+    }
+
+    public int getDifference(ListNode headA, ListNode headB) {
+        int lenA = 0;
+        int lenB = 0;
+
+        while (headA != null) {
+            lenA++;
+            headA = headA.next;
+        }
+        while (headB != null) {
+            lenB++;
+            headB = headB.next;
+        }
+
+        return lenA - lenB;
     }
 }
