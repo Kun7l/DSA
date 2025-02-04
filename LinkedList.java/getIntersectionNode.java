@@ -1,5 +1,5 @@
 public class getIntersectionNode {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public ListNode getIntersection(ListNode headA, ListNode headB) {
         int diff = getDifference(headA, headB);
 
         if (diff < 0) {
