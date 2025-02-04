@@ -6,7 +6,7 @@ public class DoublyLinkedList {
       
         for (int i = 1; i < arr.length; i++) {
             Node temp = new Node(arr[i]);
-            temp.back = moverback;
+            temp.prev = moverback;
             moverback.next = temp;
             moverback = temp;
         }
@@ -17,17 +17,17 @@ public class DoublyLinkedList {
 class Node {
     int data;
     Node next;
-    Node back;
+    Node prev;
 
-    Node(int data, Node next,Node back) {
+    Node(int data, Node next,Node prev) {
         this.data = data;
         this.next = next;
-        this.back = back;
+        this.prev = prev;
     }
 
     Node(int data) {
         this.data = data;
         this.next = null;
-        this.back = null;
+        this.prev = null;
     }
 }
