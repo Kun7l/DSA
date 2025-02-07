@@ -36,6 +36,49 @@ public class FlatteningLL {
         return root;
     }
 
+    Node optimal(Node root) {
+        if (root == null || root.next == null) {
+           return root;
+        }
+        Node mergedHead = optimal(root.next);
+        return mergeTwo(root, mergedHead);
+    }
+
+    Node mergeTwo(Node l1, Node l2) {
+        Node dummyNode = new Node(-1);
+        Node temp = dummyNode;
+        while (l1 != null && l2 != null) {
+            if (l1.data > l2.data) {
+                Node newNode = new Node(l2.data);
+                temp.bottom = newNode;
+                l2 = l2.bottom;
+            } else {
+                Node newNode = new Node(l1.data);
+                temp.bottom = newNode;
+                l1 = l1.bottom;
+            }
+            temp = temp.bottom;
+        }
+
+        if (l1 != null) {
+            while (l1 != null) {
+                Node newNode = new Node(l1.data);
+                temp.bottom = newNode;
+                l1 = l1.bottom;
+                temp = temp.bottom;
+            }
+        } else if (l2 != null) {
+            while (l2 != null) {
+                Node newNode = new Node(l2.data);
+                temp.bottom = newNode;
+                l2 = l2.bottom;
+                temp = temp.bottom;
+            }
+        }
+
+        return dummyNode.bottom;
+    }
+
     class Node {
         int data;
         Node next;
