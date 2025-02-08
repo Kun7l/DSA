@@ -1,14 +1,4 @@
-class Node {
-    int data;
-    Node next;
-    Node prev;
 
-    Node(int val) {
-        data = val;
-        next = null;
-        prev = null;
-    }
-}
 public class DeletNodeInDLL {
     public Node deleteNode(Node head, int x) {
         if (head == null || head.next == null) {
