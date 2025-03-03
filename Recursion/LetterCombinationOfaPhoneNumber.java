@@ -37,10 +37,19 @@ public class LetterCombinationOfaPhoneNumber {
             sol = sol.substring(0, sol.length() - 1);
         }
     }
+    public String convertToBinary(int num){
+        String res = "";
+        while (num!= 1) {
+            if(num%2==1) res+="1";
+            else res+= "0";
+            num/=2;
+        }
+        return res+"1";
+    }
 
     public static void main(String[] args) {
         String digits = "72";
         LetterCombinationOfaPhoneNumber l = new LetterCombinationOfaPhoneNumber();
-        System.out.println(l.letterCombinations(digits));
+        System.out.println(l.convertToBinary(3));
     }
 }
